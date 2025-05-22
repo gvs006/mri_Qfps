@@ -226,6 +226,7 @@ local function fpsMenu()
             icon = "people-arrows",
             iconAnimation = Config.IconAnimation,
             onSelect = setDistance,
+            disabled = not Config.LoadingDistanceEnabled,
             args = {
                 callback = fpsMenu
             }
@@ -394,7 +395,9 @@ end
 
 local function init()
     timecycleModifier = GetResourceKvpString("mri_Qfps:TimecycleModifier") or "default"
-    lodDistance = tonumber(GetResourceKvpString("mri_Qfps:LodDistance")) or nil
+    if Config.LoadingDistanceEnabled then
+        lodDistance = tonumber(GetResourceKvpString("mri_Qfps:LodDistance")) or nil
+    end
     lightsCutOff = tonumber(GetResourceKvpString("mri_Qfps:LightsCutoff")) or nil
     shadowsCutOff = tonumber(GetResourceKvpString("mri_Qfps:ShadowsCutoff")) or 1.0
     presetFps = GetResourceKvpString("mri_Qfps:PresetFps") or "default"

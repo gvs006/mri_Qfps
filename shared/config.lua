@@ -1,3 +1,6 @@
-Config = {}
+Config = {
+    IconAnimation = true,
+    LoadingDistanceEnabled = true
+}
 
-Config.IconAnimation = true
+return Config
