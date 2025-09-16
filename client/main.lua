@@ -300,7 +300,6 @@ local function startFpsBoost()
             end
 
             if presetFps == "default" then
-                SetArtificialLightsState(false)
 
                 if lightsCutOff ~= nil then
                     SetLightsCutoffDistanceTweak(lightsCutOff)
@@ -386,7 +385,6 @@ local function startFpsBoost()
 
                 SetFlashLightFadeDistance(3.0)
                 SetLightsCutoffDistanceTweak(3.0)
-                SetArtificialLightsState(false)
             end
             Wait(0)
         end
